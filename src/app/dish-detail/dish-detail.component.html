@@ -1,0 +1,46 @@
+<div class="container"
+    fxLayout="row"
+    fxLayout.sm="column"
+    fxLayout.xs="column"
+    fxLayoutAlign.gt-md="space-around"
+    fxLayoutGap="10px" 
+    fxLayoutGap.xs="0">
+
+    <div fxFlex="40" >
+        <mat-card-header>
+            <mat-card-title><h2><b>{{dish.name | uppercase}}</b></h2></mat-card-title>
+        </mat-card-header>
+        
+        
+        <img height="600px" src={{dish.image}}  alt="{{dish.name}}"/>
+        <mat-card-content>
+        <p>{{dish.description}}</p>
+            </mat-card-content>
+       
+        <mat-card-actions>
+            <button mat-button>Like</button>
+            <button mat-button>Share</button>
+        </mat-card-actions>
+    
+    </div>
+
+  <div fxFlex="40">
+    <h1><b>Comments</b></h1>
+ 
+    
+        <div *ngFor="let commentor of dish.comments">
+            <p>{{commentor.comment}}</p>
+            <p>{{commentor.rating}} Stars</p>
+            <p>-- {{commentor.author}} {{commentor.date}}</p>
+            <br>
+        </div>    
+    
+    
+  </div>
+
+</div>
+
+<!-- rating: 5,
+           comment: 'Imagine all the eatables, living in conFusion!',
+           author: 'John Lemon',
+           date: '2012-10-16T17:57:28.556094Z' -->
