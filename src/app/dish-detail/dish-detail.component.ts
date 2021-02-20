@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Dish } from '../shared/dish';
 
 const DISH = {
   id: '0',
@@ -44,7 +43,6 @@ const DISH = {
        }
    ]
 };
-
 @Component({
   selector: 'app-dish-detail',
   templateUrl: './dish-detail.component.html',
@@ -52,7 +50,7 @@ const DISH = {
 })
 export class DishDetailComponent implements OnInit {
   dish = DISH;
-  
+
   constructor() { }
 
   ngOnInit(): void {
